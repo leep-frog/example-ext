@@ -54,21 +54,21 @@ function activate(context) {
     }, ef), vscode.languages.registerOnTypeFormattingEditProvider({
         language: "python",
         scheme: "file",
-    }, ef, "\n", ","));
+    }, ef, "\n"));
 }
 class ExampleFormatter {
     provideDocumentFormattingEdits(document, options, token) {
         console.log(`Formatting doc`);
         return [{
                 range: new vscode.Range(0, 0, 0, 0),
-                newText: "formatText",
+                newText: "format-text",
             }];
     }
     provideOnTypeFormattingEdits(document, position, ch, options, token) {
         console.log(`Formatting on type`);
         return [{
                 range: new vscode.Range(0, 0, 0, 0),
-                newText: "onTypeText",
+                newText: "onType-text",
             }];
     }
 }

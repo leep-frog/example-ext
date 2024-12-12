@@ -24,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.languages.registerOnTypeFormattingEditProvider({
       language: "python",
       scheme: "file",
-    }, ef, "\n", ","),
+    }, ef, "\n"),
   );
 }
 
@@ -34,7 +34,7 @@ class ExampleFormatter implements vscode.DocumentFormattingEditProvider, vscode.
     console.log(`Formatting doc`);
     return [{
       range: new vscode.Range(0, 0, 0, 0),
-      newText: "formatText",
+      newText: "format-text",
     }];
   }
 
@@ -42,7 +42,7 @@ class ExampleFormatter implements vscode.DocumentFormattingEditProvider, vscode.
     console.log(`Formatting on type`);
     return [{
       range: new vscode.Range(0, 0, 0, 0),
-      newText: "onTypeText",
+      newText: "onType-text",
     }];
   }
 
